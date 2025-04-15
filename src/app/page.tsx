@@ -1,5 +1,18 @@
 "use client";
-/* eslint-disable react/no-unescaped-entities */
+import React, { useState, useEffect, useRef } from "react";
+import emailjs from '@emailjs/browser';
+import { toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { saveAs } from 'file-saver';
+import {
+  Mail, Github, Linkedin, 
+  Briefcase, School, Award, Cpu, Database, Code2,
+  ArrowRight, Send, X, Loader2, Terminal, MessageCircle, Rocket,
+} from "lucide-react";
+import axios from 'axios';
 
 interface GitHubRepo {
   id: number;
@@ -10,24 +23,12 @@ interface GitHubRepo {
   stargazers_count: number;
   updated_at: string;
 }
-import React, { useState, useEffect, useRef } from "react";
-import emailjs from '@emailjs/browser';
-import { toast } from 'react-toastify';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { saveAs } from 'file-saver';
 
-import {
-  Mail, Github, Linkedin, 
-  Briefcase, School, Award, Cpu, Database, Code2,
-  ArrowRight, Send, X, Loader2,  Terminal, MessageCircle, Rocket,
-  
-} from "lucide-react";
-import axios from 'axios';
+interface Message {
+  sender: 'user' | 'bot';
+  text: string;
+}
 
-// Custom typing effect hook
 const useTypewriter = (strings: string[], loop: boolean = true, typingSpeed: number = 100, deletingSpeed: number = 50, delayBetween: number = 1500) => {
   const [currentText, setCurrentText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -67,12 +68,11 @@ const useTypewriter = (strings: string[], loop: boolean = true, typingSpeed: num
 };
 
 const Home = () => {
-  // State variables
   const [isLoading, setIsLoading] = useState(true);
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [showChatIcon, setShowChatIcon] = useState(false);
-  const [activeTab, setActiveTab] = useState('projects');
-  const [messages, setMessages] = useState([
+  const [activeTab, setActiveTab] = useState<'projects' | 'github'>('projects');
+  const [messages, setMessages] = useState<Message[]>([
     { sender: "bot", text: "Hello! I'm your portfolio assistant. Ask me anything about my work." }
   ]);
   const [userInput, setUserInput] = useState("");
@@ -82,9 +82,6 @@ const Home = () => {
   const [githubRepos, setGithubRepos] = useState<GitHubRepo[]>([]);
   const [reposLoading, setReposLoading] = useState(true);
 
-
-
-  // Use custom typing effect
   const loadingText = useTypewriter(
     ['Booting up portfolio...', 'Loading awesome content...', 'Almost there...'],
     true,
@@ -148,7 +145,7 @@ const Home = () => {
   useEffect(() => {
     const fetchGithubRepos = async () => {
       try {
-        const response = await axios.get(
+        const response = await axios.get<GitHubRepo[]>(
           'https://api.github.com/users/bascom241/repos?sort=updated&per_page=8'
         );
         setGithubRepos(response.data);
@@ -174,7 +171,7 @@ const Home = () => {
   const handleSendMessage = () => {
     if (!userInput.trim()) return;
 
-    const newUserMessage = { sender: "user", text: userInput };
+    const newUserMessage: Message = { sender: "user", text: userInput };
     setMessages([...messages, newUserMessage]);
     setUserInput("");
 
@@ -186,7 +183,7 @@ const Home = () => {
         "You can view more projects in my GitHub repositories.",
         "For inquiries, please use the contact form below."
       ];
-      const botMessage = {
+      const botMessage: Message = {
         sender: "bot",
         text: botResponses[Math.floor(Math.random() * botResponses.length)]
       };
@@ -229,7 +226,7 @@ const Home = () => {
         <div className="container mx-auto px-4 sm:px-6 py-12 md:py-20 lg:py-24 flex flex-col md:flex-row items-center gap-6 md:gap-12">
           <div className="md:w-1/2 space-y-4 md:space-y-6 text-center md:text-left">
             <motion.h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
-              Hi, I'm <span className="text-blue-600 dark:text-blue-400">Abdulbasit</span>
+              Hi, I&apos;m <span className="text-blue-600 dark:text-blue-400">Abdulbasit</span>
             </motion.h1>
             <motion.div className="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 h-8 md:h-10">
               {heroSubtitle}
@@ -331,10 +328,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Rest of your component remains the same */}
-      {/* ... */}
-   {/* Stats Section */}
-   <section className="py-8 md:py-12 bg-white dark:bg-gray-800 shadow-sm">
+      {/* Stats Section */}
+      <section className="py-8 md:py-12 bg-white dark:bg-gray-800 shadow-sm">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
             <div className="bg-gray-50 dark:bg-gray-700 p-4 sm:p-6 rounded-xl text-center">
