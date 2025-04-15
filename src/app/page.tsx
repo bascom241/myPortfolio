@@ -1,4 +1,5 @@
 "use client";
+/* eslint-disable react/no-unescaped-entities */
 import React, { useState, useEffect, useRef } from "react";
 import emailjs from '@emailjs/browser';
 import { toast } from 'react-toastify';
@@ -9,10 +10,10 @@ import { motion } from "framer-motion";
 import { saveAs } from 'file-saver';
 
 import {
-  Mail, Github, Linkedin, Twitter, Download, Rocket,
+  Mail, Github, Linkedin, 
   Briefcase, School, Award, Cpu, Database, Code2,
-  ArrowRight, Send, X, Loader2, Check, AlertCircle, Terminal, MessageCircle,
-  ArrowDown
+  ArrowRight, Send, X, Loader2,  Terminal, MessageCircle, Rocket,
+  
 } from "lucide-react";
 import axios from 'axios';
 
@@ -71,8 +72,7 @@ const Home = () => {
   const [githubRepos, setGithubRepos] = useState<any[]>([]);
   const [reposLoading, setReposLoading] = useState(true);
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isAnimating, setIsAnimating] = useState(false);
+
 
   // Use custom typing effect
   const loadingText = useTypewriter(

@@ -1,4 +1,5 @@
 "use client";
+/* eslint-disable react/no-unescaped-entities */
 import { motion } from "framer-motion";
 import icon1 from '../../../public/l1.png';
 import icon2 from '../../../public/l2.png';

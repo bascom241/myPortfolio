@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Briefcase, X, Layers, HardHat, MessageCircle, Github, ExternalLink } from "lucide-react";
+import {  X, Layers, HardHat, Github, ExternalLink } from "lucide-react";
 import Link from "next/link";
 
 const projects = [
