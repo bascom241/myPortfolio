@@ -1,5 +1,15 @@
 "use client";
 /* eslint-disable react/no-unescaped-entities */
+
+interface GitHubRepo {
+  id: number;
+  name: string;
+  description: string | null;
+  html_url: string;
+  language: string | null;
+  stargazers_count: number;
+  updated_at: string;
+}
 import React, { useState, useEffect, useRef } from "react";
 import emailjs from '@emailjs/browser';
 import { toast } from 'react-toastify';
@@ -69,7 +79,7 @@ const Home = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const form = useRef<HTMLFormElement>(null);
 
-  const [githubRepos, setGithubRepos] = useState<any[]>([]);
+  const [githubRepos, setGithubRepos] = useState<GitHubRepo[]>([]);
   const [reposLoading, setReposLoading] = useState(true);
 
 
