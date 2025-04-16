@@ -226,7 +226,7 @@ const Home = () => {
         <div className="container mx-auto px-4 sm:px-6 py-12 md:py-20 lg:py-24 flex flex-col md:flex-row items-center gap-6 md:gap-12">
           <div className="md:w-1/2 space-y-4 md:space-y-6 text-center md:text-left">
             <motion.h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
-              Hi, I&apos;m <span className="text-blue-600 dark:text-blue-400">Abdulbasit</span>
+             <span className="text-white font-bold"> Hi, I&apos;m</span> <span className="text-blue-600 dark:text-blue-400">Abdulbasit</span>
             </motion.h1>
             <motion.div className="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 h-8 md:h-10">
               {heroSubtitle}
