@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Laptop2, User, CalendarCheck, Briefcase, GraduationCap, Layers, ChevronDown, ChevronUp } from "lucide-react";
-
+import { saveAs } from 'file-saver';
 const experiences = [
   {
     company: "Kwaratech",
@@ -88,7 +88,19 @@ const experiences = [
   }
 ];
 
+const handleDownload = () => {
+  console.log("Download initiated");
+  try {
+    saveAs('/Software_Engineer.pdf', 'Abdulbasit_Resume.pdf');
+    console.log("Download function executed");
+  } catch (error) {
+    console.error("Download failed:", error);
+  }
+};
 const ExperienceCard = ({ exp, isExpanded, onClick, index }: any) => {
+
+
+   
   return (
     <motion.div
       className="relative overflow-hidden rounded-xl border border-gray-700 bg-gradient-to-br from-gray-900 to-gray-800 shadow-lg"
@@ -248,6 +260,7 @@ export default function Experience() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={handleDownload}
             className="bg-lime-600 hover:bg-lime-500 text-white px-8 py-3 rounded-full font-medium shadow-lg"
           >
             Download Complete CV
