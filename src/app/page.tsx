@@ -8,7 +8,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { saveAs } from 'file-saver';
 import {
-  Mail, Github, Linkedin, 
+  Mail, Github, Linkedin,
   Briefcase, School, Award, Cpu, Database, Code2,
   ArrowRight, Send, X, Loader2, Terminal, MessageCircle, Rocket,
 } from "lucide-react";
@@ -235,12 +235,13 @@ const Home = () => {
             <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">
               I build scalable, performant web applications with clean code and intuitive user experiences.
             </p>
+
             <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start pt-4">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => window.location.href = '#contact'}
-                className="relative bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg flex items-center justify-center gap-2 overflow-hidden"
+                className="relative z-10 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-600 dark:to-purple-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg flex items-center justify-center gap-2 overflow-hidden"
               >
                 <motion.span
                   animate={{
@@ -278,7 +279,7 @@ const Home = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={handleDownload}
-                className="relative bg-gradient-to-r from-green-600 to-emerald-500 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg overflow-hidden group flex items-center justify-center gap-2"
+                className="relative z-10 bg-gradient-to-r from-green-600 to-emerald-500 dark:from-green-600 dark:to-emerald-500 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg overflow-hidden group flex items-center justify-center gap-2"
               >
                 <motion.span
                   animate={{
@@ -293,7 +294,7 @@ const Home = () => {
                 >
                   🌟
                 </motion.span>
-                <span className="font-medium text-sm sm:text-base">My Story</span>
+                <span className="font-medium text-sm sm:text-base">Download My Resume</span>
                 <motion.div
                   animate={{
                     scale: [1, 1.2, 1],
@@ -310,6 +311,7 @@ const Home = () => {
               </motion.button>
             </div>
           </div>
+
           <div className="md:w-1/2 relative mt-8 md:mt-0">
             <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 mx-auto">
               <Image
@@ -366,7 +368,7 @@ const Home = () => {
       {/* Projects Section */}
       <section id="projects" className="py-12 md:py-20 container mx-auto px-4 sm:px-6">
         <div className="text-center mb-8 md:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4">Featured Projects</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4 text-white">Featured Projects</h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-sm sm:text-base">
             Here are some of my recent projects that showcase my skills and expertise.
           </p>
