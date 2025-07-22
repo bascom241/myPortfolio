@@ -32,7 +32,7 @@ const projects = [
  
   image: "/connect.png",
   link: "https://uilconnectapp.onrender.com/",
-  gitHub: "",
+  gitHub: "https://github.com/bascom241/unilorinconnect",
   techStack: ["Next.js", "MongoDB", "Express", "Tailwind CSS", "Framer Motion"],
   challenges: [
     "Dynamic content updates by non-technical admins",
