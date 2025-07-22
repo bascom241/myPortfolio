@@ -28,7 +28,8 @@ const projects = [
   },
   {
   title: "Unilorin Connect",
-  description: "Official platform for SPAN Association showcasing events and member activities. Project successfully completed and deployed.",
+   description: "A campus connection platform developed for a client to enable students to post resources, access a marketplace, and chat in real-time. Includes real-time online/offline status and backend-powered messaging with Socket.io. Project successfully completed and deployed.",
+  image: "/portfolio4.png",
   image: "/connect.png",
   link: "https://spanunilorinchapter.vercel.app/",
   gitHub: "",
