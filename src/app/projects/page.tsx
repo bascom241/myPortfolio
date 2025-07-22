@@ -6,6 +6,7 @@ import {  X, Layers, HardHat, Github, ExternalLink } from "lucide-react";
 import Link from "next/link";
 
 const projects = [
+  
   {
     title: "GuidEd - Learning Management System",
     description: "A comprehensive online education platform connecting students with instructors through interactive courses.",
@@ -25,6 +26,26 @@ const projects = [
     ],
     impact: "Increased student engagement by 40% and reduced instructor workload by 25%"
   },
+  {
+  title: "Unilorin Connect",
+  description: "Official platform for SPAN Association showcasing events and member activities. Project successfully completed and deployed.",
+  image: "/portfolio4.png",
+  link: "https://spanunilorinchapter.vercel.app/",
+  gitHub: "",
+  techStack: ["Next.js", "MongoDB", "Express", "Tailwind CSS", "Framer Motion"],
+  challenges: [
+    "Dynamic content updates by non-technical admins",
+    "Event registration system",
+    "Member engagement tracking"
+  ],
+  solutions: [
+    "Built CMS-like interface",
+    "Created automated confirmation flows",
+    "Implemented analytics dashboard"
+  ],
+  impact: "Increased member participation by 75%"
+},
+
   {
     title: "ShopIt - E-commerce Platform",
     description: "Full-featured online store with product management, cart system, and secure checkout.",
