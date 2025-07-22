@@ -29,7 +29,7 @@ const projects = [
   {
   title: "Unilorin Connect",
   description: "Official platform for SPAN Association showcasing events and member activities. Project successfully completed and deployed.",
-  image: "/portfolio4.png",
+  image: "/connect.png",
   link: "https://spanunilorinchapter.vercel.app/",
   gitHub: "",
   techStack: ["Next.js", "MongoDB", "Express", "Tailwind CSS", "Framer Motion"],
