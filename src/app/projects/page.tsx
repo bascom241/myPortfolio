@@ -46,6 +46,25 @@ const projects = [
   ],
   impact: "Increased member participation by 75%"
 },
+{
+  title: "Medilorn Lab Management System",
+  description: "A MERN-based application designed to streamline laboratory operations and patient management.",
+  image: "/Screenshot 2025-08-09 182308.png",
+  link: "https://easy-lab-ui.onrender.com/", 
+  gitHub: "https://github.com/bascom241/Easy-Lab",
+  techStack: ["Next.js", "MongoDB", "Express", "Tailwind CSS"],
+  challenges: [
+    "Tracking and managing daily patients efficiently",
+    "Ensuring secure patient data handling",
+    "Integrating premium features for extended functionality"
+  ],
+  solutions: [
+    "Implemented a robust patient record management system",
+    "Used JWT authentication and encrypted database fields for security",
+    "Added premium subscription feature to allow daily patient management and analytics"
+  ],
+  impact: "Enabled laboratories to handle 2x more patients daily while maintaining accurate and secure records"
+},
 
   {
     title: "ShopIt - E-commerce Platform",
