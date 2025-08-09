@@ -51,7 +51,7 @@ const projects = [
   description: "A MERN-based application designed to streamline laboratory operations and patient management.",
   image: "/Screenshot 2025-08-09 182308.png",
   link: "https://easy-lab-ui.onrender.com/", 
-  gitHub: "https://github.com/bascom241/Easy-Lab",
+  gitHub: "https://github.com/bascom241/EasyLab",
   techStack: ["Next.js", "MongoDB", "Express", "Tailwind CSS"],
   challenges: [
     "Tracking and managing daily patients efficiently",
